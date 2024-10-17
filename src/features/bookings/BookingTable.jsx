@@ -6,10 +6,14 @@ import Spinner from "../../ui/Spinner";
 import { useBookings } from "./useBookings";
 
 function BookingTable() {
-  const { bookings, isLoading } = useBookings();
+  const { bookings, isLoading, error } = useBookings();
 
   if (isLoading) {
     return <Spinner />;
+  }
+
+  if (error) {
+    return <div>Bookings could Not be Fetched</div>;
   }
 
   console.log(bookings);
