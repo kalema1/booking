@@ -10,7 +10,7 @@ export function useLogin() {
 
     onSuccess: (user) => {
       console.log(user);
-      navigate("/");
+      navigate("/", { replace: true });
     },
 
     onError: (err) => {
