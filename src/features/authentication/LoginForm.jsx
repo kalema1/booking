@@ -19,7 +19,15 @@ function LoginForm() {
       return;
     }
 
-    loginUser({ email, password });
+    loginUser(
+      { email, password },
+      {
+        onSettled: () => {
+          setEmail("");
+          setPassword("");
+        },
+      }
+    );
   }
 
   return (
